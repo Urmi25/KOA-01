@@ -1,13 +1,16 @@
 
 const Router = require('koa-router');
 const router = new Router();
+const { 
+    getStudentById,
+    createUser,
+    updateUser,
+    deleteUser
+} = require('./controller/users');
 
-const { get, post, put, patch, delete: del } = require('./controller/users');
-
-router.get('/users', get);
-router.post('/users', post);
-router.put('/users/:id', put);
-router.patch('/users/:id', patch);
-router.del('/users/:id', del);
+router.get('/student', getStudentById);
+router.post('/users', createUser);
+router.put('/users/:id', updateUser);
+router.del('/users/:id', deleteUser);
 
 module.exports = router;
