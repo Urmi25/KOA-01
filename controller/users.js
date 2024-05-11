@@ -4,7 +4,7 @@ const UserModel = require("../models/user");
 const getStudentById = async (ctx) => {
     try {
         const { id } = ctx.params;
-        const studentData = await UserModel.studentId(id);
+        const studentData = await UserModel.getStudentById(id);
         ctx.body = { successCode: "Student Data", studentData };
     } catch (error) {
         console.error(error);

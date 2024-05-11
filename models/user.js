@@ -2,16 +2,16 @@ const AWS = require("aws-sdk");
 AWS.config.update({
     endpoint: "http://localhost:8000",
     region: "us-east-1",
-    accessKeyId: "0fgdkj",     
-    secretAccessKey: "4j10q8"     
+    accessKeyId: "oehcd",     
+    secretAccessKey: "6gqzg9"     
 });
 const docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: "2012-08-10" });
 
 const getStudentById = async (name) => {
     const params = {
-        TableName: "Student",
+        TableName: "student",
         Key: {
-          id: 1,
+          id: name,
         },
     };
     try {

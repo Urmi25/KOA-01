@@ -8,7 +8,7 @@ const {
     deleteUser
 } = require('./controller/users');
 
-router.get('/student', getStudentById);
+router.get('/student/:id', getStudentById);
 router.post('/users', createUser);
 router.put('/users/:id', updateUser);
 router.del('/users/:id', deleteUser);
